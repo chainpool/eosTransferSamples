@@ -1,0 +1,49 @@
+.idea
+.DS_Store
+logs
+*.log
+target
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+test-output/Default suite/Default test.html
+test-output/Default suite/Default test.xml
+test-output/Default suite/testng-failed.xml
+test-output/bullet_point.png
+test-output/collapseall.gif
+test-output/emailable-report.html
+test-output/failed.png
+test-output/index.html
+test-output/jquery-1.7.1.min.js
+test-output/junitreports/TEST-com.zchz.ethjavaapi.BcClientTest.xml
+test-output/junitreports/TEST-com.zchz.ethjavaapi.HistoryQueryTest.xml
+test-output/navigator-bullet.png
+test-output/old/Default suite/Default test.properties
+test-output/old/Default suite/classes.html
+test-output/old/Default suite/groups.html
+test-output/old/Default suite/index.html
+test-output/old/Default suite/main.html
+test-output/old/Default suite/methods-alphabetical.html
+test-output/old/Default suite/methods-not-run.html
+test-output/old/Default suite/methods.html
+test-output/old/Default suite/reporter-output.html
+test-output/old/Default suite/testng.xml.html
+test-output/old/Default suite/toc.html
+test-output/old/index.html
+test-output/passed.png
+test-output/skipped.png
+test-output/testng-failed.xml
+test-output/testng-reports.css
+test-output/testng-reports.js
+test-output/testng-results.xml
+test-output/testng.css
+
+# Static Content
+src/main/resources/static
+test-output/junitreports/TEST-com.zchz.ethjavaapi.BcClientAddTest.xml
+test-output/junitreports/TEST-com.zchz.ethjavaapi.service.impl.CommonServiceImplTest.xml
+test-output/junitreports/TEST-com.zchz.ethjavaapi.service.impl.FileSystemServiceImplTest.xml
+test-output/junitreports/TEST-com.zchz.ethjavaapi.service.impl.HistroyServiceImplTest.xml

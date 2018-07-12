@@ -1,0 +1,14 @@
+项目启动后，默认转账请求路径
+http://localhost:8080/tx/transfer
+
+参数如下：
+{
+  "from": "bihu",
+  "to" : "xgboy",
+  "amount": 1,
+  "privacyKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "contract": "eosio"
+}
+
+如果测试，请更改from对应的privacyKey
+注意：费用fee内部逻辑已写死

@@ -1,0 +1,61 @@
+<configuration scan="true">
+    <property name="logHome" value="logs"/>
+    <property name="appName" value="evaluate"></property>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date [%thread] %highlight(%-5level) %cyan(%logger{35}) \(%M\):%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="rootAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logHome}/${appName}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${logHome}/${appName}-%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>10</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>250MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]-[%-5level] [%logger{50}:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="filterAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logHome}/filter.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${logHome}/filter-%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]-[%-5level] [%logger{50}:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logHome}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${logHome}/error-%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]-[%-5level] [%logger{50}:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="filterLogger" level="INFO">
+        <appender-ref ref="filterAppender"/>
+    </logger>
+    <logger name="errorLogger" level="INFO">
+        <appender-ref ref="errorAppender"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="rootAppender"/>
+    </root>
+</configuration>
